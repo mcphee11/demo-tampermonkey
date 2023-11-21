@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WebMessager CX DEFAULT
 // @namespace    https://github.com/mcphee11
-// @version      4.1
+// @version      4.2
 // @description  Genesys Cloud Demo Script
 // @author       https://github.com/mcphee11/demo-tampermonkey
 // @match        http*://*/*
@@ -17,12 +17,13 @@
   const deploymentId = 'ENTER_YOUR_DEPLOYMENTID'
   const region = 'ENTER_YOUR_REGION' // eg: mypurecloud.com.au
   const environment = 'ENTER_YOUR_ENVIRONMENT' // eg: apse2
+  const supportPage = 'ENTER_PAGE_URL' //EG: https://customers_website.com/help
 
   window.addEventListener('load', function () {
     //When document has loaded
 
     //Setup Support Center DIV
-    if (document.location.href === 'https://customers_website.com/help') {
+    if (document.location.href === supportPage) {
       var support = document.createElement('div')
       support.id = 'genesys-support-center'
       document.body.appendChild(support)

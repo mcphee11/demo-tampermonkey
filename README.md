@@ -32,6 +32,7 @@ The main parts of the script that you will need to edit are the "const" items at
   const deploymentId = 'ENTER_YOUR_DEPLOYMENTID'
   const region = 'ENTER_YOUR_REGION' // eg: mypurecloud.com.au
   const environment = 'ENTER_YOUR_ENVIRONMENT' // eg: apse2
+  const supportPage = 'ENTER_PAGE_URL'  //EG: https://customers_website.com/help
 ```
 
 By default im allowing this script to "match" any URL... you may want to set this to a specific website that you want to demo on. This can be changed in the top part of the config
