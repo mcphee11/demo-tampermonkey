@@ -17,12 +17,12 @@ NOTE: if the icon does not appear in the menu at the top check to see if its "Pi
 From here go to the Utilities menu and type in the URL to import from
 
 ```
-https://github.com/mcphee11/demo-tampermonkey/demoScript.js
+https://raw.githubusercontent.com/mcphee11/demo-tampermonkey/main/demoScript.js
 ```
 
 Then click "Install"
 
-![](/docs/images/import.png?raw=true)
+![](/docs/images/install.png?raw=true)
 
 ## Config Options
 
