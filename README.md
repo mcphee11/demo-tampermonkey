@@ -26,14 +26,20 @@ Then click "Install"
 
 ## Config Options
 
-The main parts of the script that you will need to edit are the "const" items at the start which are based on your own configuration. These are from the WebMessenger Deployment configuration.
+The configuration items have been moved into "storage" rather then direct code const items. This means also that you can sync with the URL for updates. These settings are from the WebMessenger Deployment configuration. To access them scroll down to the bottom of the page and you will see 3x buttons.
 
-```
-  const deploymentId = 'ENTER_YOUR_DEPLOYMENTID'
-  const region = 'ENTER_YOUR_REGION' // eg: mypurecloud.com.au
-  const environment = 'ENTER_YOUR_ENVIRONMENT' // eg: apse2
-  const supportPage = 'ENTER_PAGE_URL'  //EG: https://customers_website.com/help
-```
+![](/docs/images/buttons.png?raw=true)
+
+Click on the "View Settings" button to bring up the Model where you can input your settings for your Genesys Cloud environment. If you are in a different "region" then you will need to put your own values of course.
+
+![](/docs/images/model.png?raw=true)
+
+    DeploymentId: YOUR_ID
+    Region: mypurecloud.com.au
+    Environment: apse2
+    Support URL: https://customersite.com/help
+
+Once you click "Save" it will close and re-load the webpage with the WebMessenger deployment then loading.
 
 By default im allowing this script to "match" any URL... you may want to set this to a specific website that you want to demo on. This can be changed in the top part of the config
 
@@ -51,7 +57,7 @@ Now that its all installed simply ensure that its turned "on" and the script you
 
 ![](/docs/images/loaded2.png?raw=true)
 
-NOTE: To make it easier when doing different testing and demos the script inserts 2x buttons at the bottom left corner of the website. The
+NOTE: To make it easier when doing different testing and demos the script inserts 3x buttons at the bottom left corner of the website. The
 
 ```
 Clear Session
