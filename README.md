@@ -24,6 +24,14 @@ Then click "Install"
 
 ![](/docs/images/install.png?raw=true)
 
+## Running the script
+
+Now that its all installed simply ensure that its turned "on" and the script you want to run is. As over time you may want to make multiply different scripts for different demos etc.
+
+Now that its running though you will still need to add in your Genesys Cloud Deployment details.
+
+![](/docs/images/running.png?raw=true)
+
 ## Config Options
 
 The configuration items have been moved into "storage" rather then direct code const items. This means also that you can sync with the URL for updates. These settings are from the WebMessenger Deployment configuration. To access them scroll down to the bottom of the page and you will see 3x buttons.
@@ -47,11 +55,7 @@ By default im allowing this script to "match" any URL... you may want to set thi
 // @match        http*://*/*
 ```
 
-## Running the script
-
-Now that its all installed simply ensure that its turned "on" and the script you want to run is. As over tiem you may want to make multiply different scripts for different demos etc.
-
-![](/docs/images/running.png?raw=true)
+## Now its working
 
 ![](/docs/images/loaded.png?raw=true)
 

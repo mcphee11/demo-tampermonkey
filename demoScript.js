@@ -91,6 +91,9 @@
       }
       if (e.altKey && e.keyCode == 57) {
         console.log('alt+9 - PAGEVIEW')
+        var page = document.location.href
+        var newTitle = page.split('/')[page.split('/').length - 1]
+        document.title = newTitle
         Genesys('command', 'Journey.pageview', {})
       }
     }
