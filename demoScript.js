@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WebMessager CX DEFAULT
 // @namespace    https://github.com/mcphee11
-// @version      4.2
+// @version      4.3
 // @description  Genesys Cloud Demo Script
 // @author       https://github.com/mcphee11/demo-tampermonkey
 // @match        http*://*/*
