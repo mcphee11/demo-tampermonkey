@@ -23,7 +23,10 @@
     const deploymentId = GM_getValue('deploymentId')
     const region = GM_getValue('region')
     const environment = GM_getValue('environment')
+    const email = GM_getValue('email')
+    const givenName = GM_getValue('givenName')
     const supportPage = GM_getValue('supportPage')
+    const customCode = GM_getValue('customCode')
 
     //Setup Support Center DIV
     if (document.location.href === supportPage) {
@@ -59,7 +62,7 @@
     function doc_keyUp(e) {
       if (e.altKey && e.keyCode == 49) {
         console.log('alt+1')
-        Genesys('command', 'Journey.record', { eventName: 'customData', customAttributes: { label: 'KVPs', customData: 'Demo54321' } })
+        customCode ? customCode : Genesys('command', 'Journey.record', { eventName: 'customData', customAttributes: { label: 'KVPs', customData: 'Demo54321' } })
       }
       if (e.altKey && e.keyCode == 50) {
         console.log('alt+2')
@@ -71,7 +74,7 @@
       }
       if (e.altKey && e.keyCode == 52) {
         console.log('alt+4')
-        Genesys('command', 'Journey.pageview', { customAttributes: { email: 'jeff@test.com', givenName: 'Jeff' }, traitsMapper: [{ fieldName: 'email' }, { fieldName: 'givenName' }] })
+        Genesys('command', 'Journey.pageview', { customAttributes: { email: email, givenName: givenName }, traitsMapper: [{ fieldName: 'email' }, { fieldName: 'givenName' }] })
       }
       if (e.altKey && e.keyCode == 53) {
         console.log('alt+5')
@@ -87,7 +90,7 @@
       }
       if (e.altKey && e.keyCode == 56) {
         console.log('alt+8')
-        Genesys('command', 'Database.set', { messaging: { customAttributes: { varUser: 'Jeff' } } })
+        Genesys('command', 'Database.set', { messaging: { customAttributes: { varUser: givenName } } })
       }
       if (e.altKey && e.keyCode == 57) {
         console.log('alt+9 - PAGEVIEW')
@@ -135,7 +138,10 @@
       GM_setValue('deploymentId', document.getElementById('deploymentId').value)
       GM_setValue('region', document.getElementById('region').value)
       GM_setValue('environment', document.getElementById('environment').value)
+      GM_setValue('email', document.getElementById('email').value)
+      GM_setValue('givenName', document.getElementById('givenName').value)
       GM_setValue('supportPage', document.getElementById('supportPage').value)
+      GM_setValue('customCode', document.getElementById('customCode').value)
       document.getElementById('dialogSettings').close()
       document.location.reload()
     }
@@ -144,7 +150,10 @@
       deploymentId ? (document.getElementById('deploymentId').value = GM_getValue('deploymentId')) : null
       region ? (document.getElementById('region').value = GM_getValue('region')) : null
       environment ? (document.getElementById('environment').value = GM_getValue('environment')) : null
+      environment ? (document.getElementById('email').value = GM_getValue('email')) : null
+      environment ? (document.getElementById('givenName').value = GM_getValue('givenName')) : null
       supportPage ? (document.getElementById('supportPage').value = GM_getValue('supportPage')) : null
+      environment ? (document.getElementById('customCode').value = GM_getValue('customCode')) : null
       document.getElementById('dialogSettings').showModal()
     }
     function closeSettings() {
@@ -168,8 +177,20 @@
       <input id="environment" />
     </div>
     <div style="display: flex; padding: 8px">
+      <label style="padding-right: 17px">Email: </label>
+      <input id="email" />
+    </div>
+    <div style="display: flex; padding: 8px">
+      <label style="padding-right: 17px">Given Name: </label>
+      <input id="givenName" />
+    </div>
+    <div style="display: flex; padding: 8px">
       <label style="padding-right: 15px">Support URL: </label>
       <input id="supportPage" />
+    </div>
+    <div style="display: flex; padding: 8px">
+      <label style="padding-right: 17px">Custom Code: </label>
+      <input id="customCode" />
     </div>
     <button id="saveSettings" style="margin: 8px; padding: 8px">Save</button>
     <button id="closeSettings" style="margin: 8px; padding: 8px">Close</button>
